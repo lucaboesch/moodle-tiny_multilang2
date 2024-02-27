@@ -145,9 +145,7 @@ const removeVisualStyling = function(ed) {
                     const rtlLanguages = getRTLLanguages();
                     if (lang) {
                         const langCode = lang[1];
-                        // Add dir="rtl" to the html tag any time the overall document direction is right-to-left.
-                        const dir = rtlLanguages.includes(langCode) ? 'rtl' : 'ltr';
-                        const newHTML = '<span class="multilang" lang="' + lang[1] + '" dir="' + dir + '">' + innerHTML + '</span>';
+                        const newHTML = '<span class="multilang" lang="' + lang[1] + '">' + innerHTML + '</span>';
                         ed.dom.setOuterHTML(span, newHTML);
                         // And remove the other siblings.
                         for (end of toRemove) {
